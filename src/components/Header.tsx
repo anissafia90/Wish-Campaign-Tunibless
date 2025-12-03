@@ -17,8 +17,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-4 ">
-          <img src="/public/logo.jpg" alt="Tunibless" className="h-10 w-10" />
+        <Link to="/" className="flex items-center space-x-4 gap-3">
+          <img src="/logo.jpg" alt="Tunibless" className="h-20 w-20" />
           <span className="text-xl font-bold bg-gradient-to-r from-tunibless-blue to-tunibless-red bg-clip-text text-transparent">
             Tunibless
           </span>
