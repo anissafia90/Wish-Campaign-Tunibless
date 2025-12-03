@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Tunibless Brand Colors */
+    --tunibless-blue: 213 77% 35%;  /* #1B4E9B */
+    --tunibless-red: 6 78% 48%;     /* #D42A1C */
+    --tunibless-blue-light: 213 77% 45%;
+    --tunibless-blue-dark: 213 77% 25%;
+    
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 213 77% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 77% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 77% 15%;
+
+    /* Primary = Tunibless Blue */
+    --primary: 213 77% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary = Light Blue */
+    --secondary: 213 50% 96%;
+    --secondary-foreground: 213 77% 35%;
+
+    --muted: 213 20% 96%;
+    --muted-foreground: 213 10% 45%;
+
+    /* Accent = Tunibless Red */
+    --accent: 6 78% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 213 20% 90%;
+    --input: 213 20% 90%;
+    --ring: 213 77% 35%;
+
+    --radius: 0.75rem;
+
+    /* Gradient */
+    --gradient-primary: linear-gradient(135deg, hsl(213 77% 35%), hsl(6 78% 48%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(213 77% 35% / 0.2);
+    --shadow-glow: 0 0 40px hsl(213 77% 45% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 213 77% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 77% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 77% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 213 77% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 30% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 213 30% 20%;
+    --muted-foreground: 213 10% 65%;
+
+    --accent: 6 78% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 30% 20%;
+    --input: 213 30% 20%;
+    --ring: 213 77% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
