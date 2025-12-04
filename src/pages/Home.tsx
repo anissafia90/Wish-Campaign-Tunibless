@@ -83,7 +83,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container py-16 text-center">
         <div className="mx-auto max-w-3xl space-y-6">
-          <div className="inline-flex items-center space-x-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+          <div className="inline-flex items-center gap-3 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
             <Sparkles className="h-4 w-4" />
             <span>سنة 2026</span>
           </div>
@@ -92,12 +92,13 @@ export default function Home() {
             شارك أمنياتك للعام الجديد
             <br />
             <span className="bg-gradient-to-r from-tunibless-blue to-tunibless-red bg-clip-text text-transparent">
-              مع Tunibless ✨
+              مع TuniBless ✨
             </span>
           </h1>
 
           <p className="text-lg text-muted-foreground">
-            انضم إلى مجتمعنا وشارك آمالك وأحلامك للعام الجديد. ألهم الآخرين واستلهم منهم!
+            انضم إلى مجتمعنا وشارك آمالك وأحلامك للعام الجديد. ألهم الآخرين
+            واستلهم منهم!
           </p>
 
           {!user && (
