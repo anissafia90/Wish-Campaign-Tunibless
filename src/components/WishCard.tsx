@@ -1,4 +1,5 @@
-import { Heart, Trash2 } from "lucide-react";
+import { Heart, Trash2, Edit } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import {
   Card,
@@ -45,6 +46,9 @@ export default function WishCard({
   const [liked, setLiked] = useState(userLiked);
   const [likesCount, setLikesCount] = useState(wish.likes_count);
   const [loading, setLoading] = useState(false);
+  const defaultImage =
+    "https://www.iphone2lovely.com/newyear/wp-content/uploads/2024/09/Happy-New-Year-Wishes-2026-for-Neighbors-Status-min.jpg";
+  const imageSrc = wish.image_url || defaultImage;
 
   const handleLike = async () => {
     if (!user) {
@@ -106,15 +110,13 @@ export default function WishCard({
 
   return (
     <Card className="overflow-hidden transition-shadow hover:shadow-lg">
-      {wish.image_url && (
-        <div className="aspect-video w-full overflow-hidden">
-          <img
-            src={wish.image_url}
-            alt={wish.title}
-            className="h-full w-full object-cover transition-transform hover:scale-105"
-          />
-        </div>
-      )}
+      <div className="aspect-video w-full overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={wish.title}
+          className="h-full w-full object-cover transition-transform hover:scale-105"
+        />
+      </div>
 
       <CardHeader>
         <CardTitle className="text-xl">{wish.title}</CardTitle>
@@ -148,15 +150,24 @@ export default function WishCard({
         </Button>
 
         {showDelete && (
-          <Button
-            variant="destructive"
-            size="sm"
-            onClick={handleDelete}
-            className="gap-2"
-          >
-            <Trash2 className="h-4 w-4" />
-            حذف
-          </Button>
+          <div className="flex items-center gap-2">
+            <Link to={`/dashboard/new-wish?wishId=${wish.id}`}>
+              <Button variant="outline" size="sm" className="gap-2">
+                <Edit className="h-4 w-4" />
+                تحديث
+              </Button>
+            </Link>
+
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={handleDelete}
+              className="gap-2"
+            >
+              <Trash2 className="h-4 w-4" />
+              حذف
+            </Button>
+          </div>
         )}
       </CardFooter>
     </Card>
